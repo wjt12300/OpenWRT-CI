@@ -26,23 +26,6 @@ if [ -d *"homeproxy"* ]; then
 	cd $PKG_PATH && echo "homeproxy date has been updated!"
 fi
 
-#修改argon主题字体和颜色
-if [ -d *"luci-theme-argon"* ]; then
-	echo " " && cd ./luci-theme-argon/
-
-	sed -i "s/primary '.*'/primary '#31a1a1'/; s/'0.2'/'0.5'/; s/'none'/'bing'/; s/'600'/'normal'/" ./luci-app-argon-config/root/etc/config/argon
-
-	cd $PKG_PATH && echo "theme-argon has been fixed!"
-fi
-
-#修改aurora菜单式样
-if [ -d *"luci-app-aurora-config"* ]; then
-	echo " " && cd ./luci-app-aurora-config/
-
-	sed -i "s/nav_type '.*'/nav_type 'dropdown'/g" $(find ./root/usr/share/aurora/ -type f -name "*.template")
-
-	cd $PKG_PATH && echo "theme-aurora has been fixed!"
-fi
 
 #修改mini-diskmanager菜单位置
 if [ -d *"luci-app-mini-diskmanager"* ]; then
